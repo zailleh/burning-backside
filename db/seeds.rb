@@ -15,7 +15,7 @@ Reservation.destroy_all
 u = User.create({
   name: "Test",
   email: "test",
-  password_digest: "chicken"
+  password: "chicken"
 })
 
 p = Plane.create({
