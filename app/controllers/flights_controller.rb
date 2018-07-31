@@ -1,6 +1,22 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
 
+
+  # POST /flights/search
+  # GET /flights/:from/:to
+  def search
+    # expect search params:
+    # { 'from', 'to', 'date'(optional) }
+    search_params = params.permit('from','to','date')
+    if search_params['date'].present?
+      dt = DateTime::parse(search_params['date'])
+      @flights = Flight.where(from: search_params['from'], to: search_params['to'], depart_dt: dt.beginning_of_day..dt.end_of_day)
+    else
+      @flights = Flight.where(from: search_params['from'], to: search_params['to'])
+    end
+    render :action => 'index.json'
+  end
+
   # GET /flights
   # GET /flights.json
   def index
