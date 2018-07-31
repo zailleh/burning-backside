@@ -38,3 +38,4 @@ r = Reservation.new
 r.user = u
 r.flight = f
 r.seat_number = "A3"
+r.save
