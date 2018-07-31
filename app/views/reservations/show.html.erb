@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<table>
+  <tr>
+    <td><%= @reservation.flight.flight_number %></td>
+    <td><%= @reservation.seat_number %></td>
+    <td><%= @reservation.user.name %></td>
+  </tr>
+</table>
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>

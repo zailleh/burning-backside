@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <%= form.label :plane_id %>
+  <%= form.select(:plane_id, options_for_select(Plane.all.pluck(:name,:id)))%>
+
+  <%= form.label :flight_number %>
+  <%= form.text_field :flight_number %>
+
+  <%= form.label :from %>
+  <%= form.text_field :from %>
+
+  <%= form.label :to %>
+  <%= form.text_field :to %>
+
+  <%= form.label :depart_dt %>
+  <%= form.datetime_select :depart_dt %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

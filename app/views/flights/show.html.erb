@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Plane</th>
+      <th>Flight #</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Depart At</th>
+    </tr>
+  </thead>
 
+  <tbody>
+      <tr>
+        <td><%= @flight.plane.name %></td>
+        <td><%= @flight.flight_number %></td>
+        <td><%= @flight.from %></td>
+        <td><%= @flight.to %></td>
+        <td><%= @flight.depart_dt %></td>
+      </tr>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_flight_path(@flight) %> |
 <%= link_to 'Back', flights_path %>

@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :rows %>
+  <%= form.number_field :rows %>
+
+  <%= form.label :columns %>
+  <%= form.number_field :columns %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

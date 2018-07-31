@@ -4,7 +4,7 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    @flights = Flight.order(depart_dt: 'asc')
   end
 
   # GET /flights/1
@@ -28,7 +28,7 @@ class FlightsController < ApplicationController
 
     respond_to do |format|
       if @flight.save
-        format.html { redirect_to @flight, notice: 'Flight was successfully created.' }
+        format.html { redirect_to flights_path, notice: 'Flight was successfully created.' }
         format.json { render :show, status: :created, location: @flight }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.fetch(:flight, {})
+      params.require(:flight).permit(:plane_id, :flight_number, :from, :to, :depart_dt)
     end
 end
