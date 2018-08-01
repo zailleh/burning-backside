@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, :only [:create, :login]
+  skip_before_action :verify_authenticity_token, only: [:create, :login]
   # GET /users/new
   def new
     @user = User.new

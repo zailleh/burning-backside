@@ -1,7 +1,6 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token, :only [:search, :show]
-
+  skip_before_action :verify_authenticity_token, only: [:search, :show]
   # POST /flights/search
   # GET /flights/:from/:to
   def search
