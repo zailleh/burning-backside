@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to flights_path }
-      format.json { render json: status: :success }
+      format.json { render json: {logout: 'success'} }
     end
   end
 
