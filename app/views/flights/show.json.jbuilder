@@ -1,7 +1,7 @@
 json.partial! "flights/flight", flight: @flight
 
 
-json.reservations! @flight.reservations do |r|
+json.reservations @flight.reservations do |r|
   json.row r.seat_row
   json.column r.seat_column
   json.name r.user.name
