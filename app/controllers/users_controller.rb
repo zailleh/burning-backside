@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       if (user.password_digest == params['password'] || user.authenticate(params['password']))
         session[:user_id] = user.id
         format.html { redirect_to flights_path, notice: 'Login Successful'}
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render :show, status: :ok, location: user }
       else
         format.html { redirect_to login_path, notice: 'Incorrect Details'}
         format.json { render json: {login: 'failed'}, status: :failed }
