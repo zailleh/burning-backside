@@ -11,6 +11,19 @@
     </div>
   <% end %>
   <div class="actions">
-    <%= form.submit %>
+
+  <%= form.label :flight_id %>
+  <%= form.select(:flight_id, options_for_select(Flight.all.pluck(:flight_number,:id)))%>
+
+  <%= form.label :user_id %>
+  <%= form.select(:user_id, options_for_select(User.all.pluck(:email,:id)))%>
+
+  <%= form.label :seat_row %>
+  <%= form.number_field :seat_row %>
+
+  <%= form.label :seat_column %>
+  <%= form.number_field :seat_column %>
+
+  <%= form.submit %>
   </div>
 <% end %>

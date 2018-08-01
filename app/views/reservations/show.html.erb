@@ -2,7 +2,8 @@
 <table>
   <tr>
     <td><%= @reservation.flight.flight_number %></td>
-    <td><%= @reservation.seat_number %></td>
+    <td><%= @reservation.seat_row %></td>
+    <td><%= @reservation.seat_column %></td>
     <td><%= @reservation.user.name %></td>
   </tr>
 </table>
