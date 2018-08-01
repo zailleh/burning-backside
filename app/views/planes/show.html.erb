@@ -27,11 +27,11 @@
     </tr>
   </thead>
   <tbody>
-    <% 1.upto(@plane.columns) do |i| %>
+    <% 1.upto(@plane.rows) do |i| %>
     <tr>
       <th><%= i %></th>
-      <% 1.upto(@plane.rows) do |j| %>
-      <td><%= (65+j).chr + (i).to_s %></td>
+      <% 1.upto(@plane.columns) do |j| %>
+      <td><%= (i).to_s + (65+j).chr %></td>
       <% end %>
     </tr>
     <% end %>

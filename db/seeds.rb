@@ -14,7 +14,7 @@ Reservation.destroy_all
 
 u = User.create({
   name: "Test",
-  email: "test",
+  email: "test@test.com",
   password: "chicken"
 })
 
